@@ -1,0 +1,12 @@
+{
+    "name": "Cicero Curator",
+    "description": "Add custom URLS to the Cicero app.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["tabs", "storage"],
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "action": {},
+    "options_page": "options.html"
+}

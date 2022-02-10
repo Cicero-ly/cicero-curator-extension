@@ -1,0 +1,13 @@
+#authForm {
+    width: 150px;
+}
+
+#authForm fieldset {
+    padding: 10px;
+    border: none;
+}
+
+#authForm input {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}

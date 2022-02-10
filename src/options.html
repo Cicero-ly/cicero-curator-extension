@@ -3,14 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Cicero - Curator extension</title>
+  <title>Cicero - Curator extension - Options</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -26,10 +20,20 @@
 
 <body>
 
-  <h1>Cicero</h1>
-  <p>Added custom URL!</p>
+  <h1>Login:</h1>
+  
+  <form id ="authForm">
+    <fieldset>
+        <label>Email:</label>
+            <input type="email" name="curatorEmail" id="curatorEmailInput">
+        <label>Password:</label>
+        <input type="password" name="curatorPass" id="curatorPassInput">
+      <button>Login</button>
+    </fieldset>
+  </form>
 
-  <!-- <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script> -->
+  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
+  <script src="js/auth.js"></script>
 
 </body>
 
