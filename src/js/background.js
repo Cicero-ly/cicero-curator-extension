@@ -7,8 +7,12 @@ chrome.action.onClicked.addListener(async () => {
     let currentTab = tabs[0];
     console.log('log current tab url:', currentTab.url);
 
-    let res = await addCustomThought(currentTab.url);
-    console.log(res);
+    try {
+        let res = await addCustomThought(currentTab.url);
+        console.log(res);
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 async function addCustomThought(url) {
@@ -27,7 +31,11 @@ async function addCustomThought(url) {
     // let res = await fetch(request, {
     //     method: "get",
     // });
-    return res.json();
+    // return res.json();
+    if (res.status !== 200) {
+        // throw...
+    }
+    return undefined;
 }
 
 function getAuthStatus() {
