@@ -13,16 +13,20 @@ chrome.action.onClicked.addListener(async () => {
 
 async function addCustomThought(url) {
     const [curatorEmail, curatorPass] = await getAuthStatus();
-    const request = `https://dev-api.cicero.ly/admin/curator/fetch-meta-tags?url=${url}&curatorEmail=${curatorEmail}&curatorPass=${curatorPass}&pass=AyEDyX%268%26YXx8qhSuX2%23TGURb9SAjxkMjpfG!%5E6aCcg%23H3!dTwCuPoDD%23dMWvJN6%40S%24Je`;
-    // const request = `https://dev-api.cicero.ly/admin/curator/thoughts?curatorEmail=${curatorEmail}&curatorPass=${curatorPass}&pass=AyEDyX%268%26YXx8qhSuX2%23TGURb9SAjxkMjpfG!%5E6aCcg%23H3!dTwCuPoDD%23dMWvJN6%40S%24Je`
+    const request = `https://dev-api.cicero.ly/admin/curator/thoughts?curatorEmail=${curatorEmail}&curatorPass=${curatorPass}&pass=AyEDyX%268%26YXx8qhSuX2%23TGURb9SAjxkMjpfG!%5E6aCcg%23H3!dTwCuPoDD%23dMWvJN6%40S%24Je`
+    const requestBody = {
+            newThought: true,
+            url: url
+    }
     let res = await fetch(request, {
-        method: "get"
-        // method: "post",
-        // body: {
-        //     newThought: true,
-        //     url: url
-        // }
+        method: "post",
+        body: new Blob([JSON.stringify(requestBody)], {type : 'application/json'})
     });
+    // just for testing...
+    // const request = `https://dev-api.cicero.ly/admin/curator/fetch-meta-tags?url=${url}&curatorEmail=${curatorEmail}&curatorPass=${curatorPass}&pass=AyEDyX%268%26YXx8qhSuX2%23TGURb9SAjxkMjpfG!%5E6aCcg%23H3!dTwCuPoDD%23dMWvJN6%40S%24Je`;
+    // let res = await fetch(request, {
+    //     method: "get",
+    // });
     return res.json();
 }
 
