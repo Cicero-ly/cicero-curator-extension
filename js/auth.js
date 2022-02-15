@@ -46,3 +46,10 @@ function setLocalStorage(obj) {
         })
     })
 }
+
+let shortcutLink = document.getElementById("shortcut-link");
+shortcutLink.addEventListener("click", event => {
+    chrome.tabs.create({
+        url: 'chrome://extensions/shortcuts'
+    });
+})

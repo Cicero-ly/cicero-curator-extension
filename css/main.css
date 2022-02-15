@@ -15,3 +15,9 @@
     margin-bottom: 10px;
     margin-top: 5px;
 }
+
+.divider {
+    width: 100%;
+    border: 1px solid gainsboro;
+    margin: 0px 0px 20px 0px;
+}
