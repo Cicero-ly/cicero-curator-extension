@@ -17,7 +17,7 @@ form.addEventListener("submit", (event) => {
                 password: curatorPassInput
             });
 
-            document.getElementById("auth_status").style.color = "green";
+            document.getElementById("auth_status").style.color = "forestgreen";
             document.getElementById("auth_status").innerHTML = "Successfully logged in";
         }
     })
