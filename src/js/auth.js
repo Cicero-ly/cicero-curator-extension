@@ -5,7 +5,7 @@ form.addEventListener("submit", (event) => {
     let curatorEmailInput = document.getElementById("curatorEmailInput").value;
     let curatorPassInput = document.getElementById("curatorPassInput").value;
     
-    let authRequest = `https://dev-api.cicero.ly/admin/curator/get-auth-status?curatorEmail=${curatorEmailInput}&curatorPass=${curatorPassInput}&pass=AyEDyX%268%26YXx8qhSuX2%23TGURb9SAjxkMjpfG!%5E6aCcg%23H3!dTwCuPoDD%23dMWvJN6%40S%24Je`;
+    let authRequest = `https://api.cicero.ly/admin/curator/get-auth-status?curatorEmail=${curatorEmailInput}&curatorPass=${curatorPassInput}&extensionPass=9saGbMoDek4yLjQKJfqyh9fAgAdKhwH8HQX8LUjh6pQjsuVdPt`;
     fetch(authRequest, { method: "get" })
     .then(res => {
         if (res.ok) {
@@ -16,13 +16,16 @@ form.addEventListener("submit", (event) => {
                 email: curatorEmailInput,
                 password: curatorPassInput
             });
-            // todo: this isnt working as expected
-        } else if (res.status === 401) {
-            console.error('Unauthorized');
-            setLocalStorage({});
-        } else {
-            console.error(res.status);
+
+            document.getElementById("auth_status").style.color = "green";
+            document.getElementById("auth_status").innerHTML = "Successfully logged in";
         }
+    })
+    .catch(e => {
+        document.getElementById("auth_status").style.color = "red";
+        document.getElementById("auth_status").innerHTML = "Authentication failed";
+        console.error(e);
+        setLocalStorage({});
     })
 })
 
@@ -34,6 +37,7 @@ function setLocalStorage(obj) {
                 console.log(data);
             })
         })
+        return;
     }
     chrome.storage.sync.set({ ciceroUser: { email: obj.email, password: obj.password } }, () => {
         console.log('localStorage successfully set');

@@ -8,10 +8,7 @@
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/main.css">
 
   <link rel="manifest" href="site.webmanifest">
@@ -25,14 +22,15 @@
   <form id ="authForm">
     <fieldset>
         <label>Email:</label>
-            <input type="email" name="curatorEmail" id="curatorEmailInput">
+            <input type="email" name="email" id="curatorEmailInput" autocomplete="email">
         <label>Password:</label>
-        <input type="password" name="curatorPass" id="curatorPassInput">
+        <input type="password" name="password" id="curatorPassInput" autocomplete="current-password">
       <button>Login</button>
     </fieldset>
   </form>
 
-  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
+  <p id="auth_status"></p>
+
   <script src="js/auth.js"></script>
 
 </body>
