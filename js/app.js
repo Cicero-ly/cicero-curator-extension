@@ -63,7 +63,7 @@ async function addCustomThought(url) {
 function getAuthStatus() {
     return new Promise((resolve, reject) => {
         chrome.storage.sync.get(['ciceroUser'], res => {
-            if (Object.keys(res.ciceroUser).length === 0) {
+            if (!res.ciceroUser || Object.keys(res.ciceroUser)?.length === 0) {
                 reject('Not authenticated. Please right-click the extension icon, click "options", and login.');
             }
             resolve([res.ciceroUser.email, res.ciceroUser.password]);

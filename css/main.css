@@ -17,11 +17,15 @@
 }
 
 .divider {
-    width: 100%;
+    width: 450px;
     border: 1px solid gainsboro;
     margin: 0px 0px 20px 0px;
 }
 
 .light {
     color: lightslategray;
+}
+
+.textblock {
+    width: 400px;
 }
