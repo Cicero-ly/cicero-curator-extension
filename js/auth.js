@@ -1,6 +1,8 @@
 let form = document.getElementById("authForm");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    document.getElementById("auth_status").innerHTML = "waiting...";
     
     let curatorEmailInput = document.getElementById("curatorEmailInput").value;
     let curatorPassInput = document.getElementById("curatorPassInput").value;
