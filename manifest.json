@@ -10,6 +10,9 @@
         "64": "img/popup-icons/icons8-greek-pillar-base-64.png"
     },
     "permissions": ["tabs", "storage"],
+    "background": {
+        "service_worker": "background.js"
+    },
     "action": {
         "default_title": "Cicero Content Grabber",
         "default_popup": "index.html"
