@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log('tabs', tabs)
         currentTabUrl = tabs[0].url;
 
+        document.getElementById("status_msg").innerHTML = "Adding custom URL...";
         addCustomThought(currentTabUrl)
         .then(res => {
             if (res.status && res.status === 200) {
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 async function addCustomThought(url) {
     const [curatorEmail, curatorPass] = await getAuthStatus();
+
     const request = `https://api.cicero.ly/admin/curator/thoughts?curatorEmail=${curatorEmail}&curatorPass=${curatorPass}&extensionPass=9saGbMoDek4yLjQKJfqyh9fAgAdKhwH8HQX8LUjh6pQjsuVdPt`
     const requestBody = {
             newThought: true,
@@ -49,9 +51,9 @@ async function addCustomThought(url) {
 
 function getAuthStatus() {
     return new Promise((resolve, reject) => {
-        chrome.storage.sync.get('ciceroUser', res => {
-            if (!res) {
-                reject([undefined, undefined]);
+        chrome.storage.sync.get(['ciceroUser'], res => {
+            if (Object.keys(res.ciceroUser).length === 0) {
+                reject('Not authenticated. Please right-click the extension icon, click "options", and login.');
             }
             resolve([res.ciceroUser.email, res.ciceroUser.password]);
         })

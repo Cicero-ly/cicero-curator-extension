@@ -31,17 +31,17 @@ form.addEventListener("submit", (event) => {
 
 function setLocalStorage(obj) {
     if (Object.keys(obj).length === 0) {
-        chrome.storage.sync.set({}, () => {
+        chrome.storage.sync.set({ciceroUser: obj }, () => {
             console.log('localStorage cleared');
-            chrome.storage.sync.get('ciceroUser', data => {
+            chrome.storage.sync.get(['ciceroUser'], data => {
                 console.log(data);
             })
         })
         return;
     }
-    chrome.storage.sync.set({ ciceroUser: { email: obj.email, password: obj.password } }, () => {
+    chrome.storage.sync.set({ ciceroUser: obj }, () => {
         console.log('localStorage successfully set');
-        chrome.storage.sync.get('ciceroUser', data => {
+        chrome.storage.sync.get(['ciceroUser'], data => {
             console.log(data);
         })
     })
