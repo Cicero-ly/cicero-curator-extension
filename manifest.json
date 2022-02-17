@@ -1,7 +1,7 @@
 {
     "name": "Cicero Content Grabber",
     "description": "Add custom URLS to the Cicero app.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "icons": {
         "16": "img/popup-icons/icons8-greek-pillar-base-16.png",
