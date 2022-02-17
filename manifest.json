@@ -7,7 +7,8 @@
         "16": "img/popup-icons/icons8-greek-pillar-base-16.png",
         "32": "img/popup-icons/icons8-greek-pillar-base-32.png",
         "48": "img/popup-icons/icons8-greek-pillar-base-48.png",
-        "64": "img/popup-icons/icons8-greek-pillar-base-64.png"
+        "64": "img/popup-icons/icons8-greek-pillar-base-64.png",
+        "128": "img/popup-icons/icons8-greek-pillar-base-128.png"
     },
     "permissions": ["tabs", "storage"],
     "background": {
