@@ -2,16 +2,16 @@
     width: 200px;
 }
 
-#authForm {
+#auth_form {
     width: 150px;
 }
 
-#authForm fieldset {
+#auth_form fieldset {
     padding: 10px;
     border: none;
 }
 
-#authForm input {
+#auth_form input {
     margin-bottom: 10px;
     margin-top: 5px;
 }
