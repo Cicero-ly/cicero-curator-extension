@@ -53,7 +53,7 @@ async function addCustomThought(url) {
 
   const [curatorEmail, curatorPass] = await getAuthStatus();
 
-  const request = `https://api.cicero.ly/admin/curator/thoughts?curatorEmail=${curatorEmail}&curatorPass=${curatorPass}&extensionPass=9saGbMoDek4yLjQKJfqyh9fAgAdKhwH8HQX8LUjh6pQjsuVdPt`;
+  const request = `https://api.cicero.ly/admin/curator/thoughts/new?curatorEmail=${curatorEmail}&curatorPass=${curatorPass}&extensionPass=9saGbMoDek4yLjQKJfqyh9fAgAdKhwH8HQX8LUjh6pQjsuVdPt`;
   const requestBody = {
     newThought: true,
     url: url,
